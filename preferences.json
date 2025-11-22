@@ -1,63 +1,49 @@
 [
     {
-        "property": "mod.extension.viewgrid",
-        "label": "Apply grid view to extension menu",
-        "type": "checkbox"
+        "type": "text",
+        "label": "**Happy Mods**",
+        "margin": "10px 0 15px 0",
+        "size": "20px"
     },
     {
-        "property": "mod.lean.hide-zoom",
-        "label": "Hide Zoom button in URL bar",
-        "type": "checkbox"
+        "type": "separator",
+        "label": "General"
     },
     {
-        "property": "mod.lean.show-translation",
-        "label": "Show Translation button when hovering the URL bar in Single Toolbar mode",
-        "type": "checkbox"
+        "type": "checkbox",
+        "property": "mod.zz-neo-features-disabled",
+        "label": "Disable all the features."
     },
     {
-        "property": "mod.lean.show-pageactions",
-        "label": "Show page action button for extensions when hovering the URL bar in Single Toolbar mode",
-        "type": "checkbox"
+        "type": "separator",
+        "label": "Essentials"
     },
     {
-        "property": "mod.lean.top-workspace",
-        "label": "Hide top workspace indicator except when editing its name (Right click icon for current workspace at the bottom and choose 'Change Name')",
-        "type": "checkbox"
+        "type": "checkbox",
+        "property": "mod.zz-neo-features-essentials-disabled",
+        "label": "Disable Essentials feature."
     },
     {
-        "property": "mod.lean.bottom-buttons",
-        "label": "Hide bottom buttons area unless tab sidebar is hovered",
-        "type": "checkbox"
+        "type": "checkbox",
+        "property": "mod.zz-neo-features-essentials-keep-expanded",
+        "label": "Keep better essentials area expanded."
     },
     {
-        "property": "mod.lean.ninja-top-buttons",
-        "label": "Hide top buttons area in Single Toolbar mode but still preserve 1px height so the buttons is accessible above the URL bar, Ninja-style. Works in tandem with Gesturefy extension",
-        "type": "checkbox"
+        "type": "separator",
+        "label": "Media Buttons"
     },
     {
-        "property": "mod.lean.bookmarks",
-        "label": "Only show bookmarks when hovering top navbar in Multiple and Collapsed Toolbar mode",
-        "type": "checkbox"
+        "type": "checkbox",
+        "property": "mod.zz-neo-features-media-disabled",
+        "label": "Disable Media buttons features, if disabled, the media controls will be hidden in collapsed mode."
     },
     {
-        "property": "mod.lean.pinned-ext",
-        "label": "Repurpose the bottom buttons area as 'Pinned Extensions' below the URL bar in Single Toolbar mode",
-        "type": "checkbox"
-    },
-    {
-        "property": "mod.lean.pinned-ext.workspaces",
-        "label": "Show workspace buttons that were hidden when 'Pinned Extensions' is enabled",
-        "type": "checkbox"
+        "type": "separator",
+        "label": "Extension"
     },
     {
         "property": "mod.zz-Custom-extension-icons-disabled",
-        "label": "Disables Custom extension icons.",
+        "label": "Disable Custom extension icons.",
         "type": "checkbox"
-    },
-    {
-        "property": "mod.forked.tidypopup.usetidyextension",
-        "label": "Enable/Disable Tidy Extension",
-        "type": "checkbox",
-        "defaultValue": true
     }
 ]
