@@ -1,15 +1,6 @@
-/* Custom extension 
-------------------------------------
-"mod.zz-Custom-extension-icons-disabled"
-"mod.forked.tidypopup.usetidyextension"
-*/
-/*******************************************************************************
- * EXTENSIONS STYLING
- ******************************************************************************/
-
+/* Custom extension icons */
 @media not (-moz-pref("mod.zz-Custom-extension-icons-disabled")) {
 
-  /* Custom extension icons */
   /* Stylebot 
   [label="Stylebot"] image {
     list-style-image: url("https://cdn3.iconfinder.com/data/icons/feather-5/24/command-128.png") !important;
@@ -61,7 +52,6 @@
 
   /* Dark theme invert for extension icons
   [devtoolstheme="dark"] { */
-
   [label="Search by Image"],
   [label="Simple Translate"],
   [label="Skip Redirect"],
@@ -75,591 +65,525 @@
 }
 
 
-/* Tidy Up Extenstion */
-@media (-moz-bool-pref: "mod.forked.tidypopup.usetidyextension") {
-  #unified-extensions-view {
-    width: var(--menu-panel-width) !important;
-  }
-
-  #unified-extensions-messages-container {
-    margin: 0px !important;
-  }
-
-  #unified-extensions-area toolbaritem {
-    margin: 0px !important;
-  }
-
-  #unified-extensions-area toolbaritem box toolbarbutton.unified-extensions-item-action-button vbox.unified-extensions-item-contents deck {
-    display: none !important;
-  }
-
-  #unified-extensions-area toolbaritem box toolbarbutton.unified-extensions-item-action-button stack.toolbarbutton-badge-stack image {
-    height: 16px !important;
-    width: 16px !important;
-  }
-
-  #unified-extensions-area toolbaritem box toolbarbutton.unified-extensions-item-menu-button {
-    margin-left: 0px !important;
-  }
-
-  #unified-extensions-area toolbaritem box toolbarbutton.unified-extensions-item-menu-button image {
-    padding: 0px !important;
-  }
-}
-
-/*
-* github.com/KiKaraage/
-* ZenMods/Lean
-* Show things only when you need it: Top & bottom buttons, workspace indicator, bookmarks bar and more
-*/
-
-/* 0 - Tidy up extension menu by default */
-/* Reduce icon size in extension menu  */
+/* Neo-Zen */
 :root {
-  --uei-icon-size: 20px !important;
+  --Neo-Color-Dark: color-mix(in srgb, var(--zen-primary-color) 10%, #000000c0);
+  --Neo-Color-Light: color-mix(in srgb, var(--zen-primary-color) 25%, white);
+
+  /* Black colors*/
+  --Neo-Black-1: light-dark(color-mix(in srgb, #ffffff 40%, transparent), color-mix(in srgb, #000000 35%, transparent));
+  --Neo-Black-2: light-dark(color-mix(in srgb, #ffffff 100%, transparent), color-mix(in srgb, #000000 35%, transparent));
+  --Neo-Black-3: light-dark(color-mix(in srgb, #ffffff 25%, transparent), color-mix(in srgb, #000000 60%, transparent));
+
+  /* Shadow */
+  --Neo-Shadow-Color-1: light-dark(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.4));
+  --Neo-Shadow-Color-2: light-dark(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.8));
+  --Neo-Shadow-Color-3: light-dark(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 1.0));
+
+  /*Glow Colors*/
+  --Neo-Glow-Color-1: color-mix(in srgb, var(--zen-primary-color) 90%, white);
+  --Neo-Glow-Color-2: color-mix(in srgb, var(--zen-primary-color) 80%, white);
+  --Neo-Glow-Color-3: color-mix(in srgb, var(--zen-primary-color) 70%, white);
+
+  /* Border radius */
+  --Neo-Border-Radius: 4px;
+
+  /* Blur */
+  --Neo-Blur: blur(52px) saturate(180%) brightness(150%);
+  --Neo-Blur-Simple: blur(8px) brightness(110%) saturate(150%);
+  --Neo-Blur-Search: blur(20px) brightness(110%) saturate(150%);
+
+  /* Blur colors */
+  --Neo-Blur-Color: color-mix(in srgb, var(--zen-primary-color) 1%, #000000a0);
+
+  /* Width Compact Mode */
+  --Neo-Width-Compact-Expanded: 20em;
+
+  /* Delays */
+  --Neo-Delay: 4s;
+  --Neo-Delay-Expanding-Indicator: 2.5s;
+
+  /* URL-Bar */
+
+  --Neo-Zen-URL-Height: 50px;
+  --Neo-Rows-Height: 45px;
+  --Neo-Margin-Height: 10px;
+
+  /* Background color */
+  --Neo-Background-Color: light-dark(rgba(215, 215, 215, 1), rgba(10, 10, 10, 1));
 }
 
-@media not (-moz-bool-pref: "mod.extension.viewgrid") {
-  /* Hide header, description, extension captions */
-  #unified-extensions-view box.panel-header,
-  #unified-extensions-view > :nth-child(2),
-  #unified-extensions-description,
-  #unified-extensions-messages-container,
-  .unified-extensions-item-message-deck {
-    display: none !important;
-  }
-  /* Reduce the panel size and padding */
-  #unified-extensions-view {
-    width: var(--menu-panel-width) !important;
-  }
-  #overflowed-extensions-list {
-    padding-block-start: 2px !important;
-  }
-  #unified-extensions-area {
-    padding-block-end: 1px !important;
-  }
-  panelview .unified-extensions-item-action-button {
-    padding-inline: 8px !important;
-    padding-block: 4px !important;
-  }
-  #unified-extensions-manage-extensions {
-    margin-inline: 3px !important;
-    padding: 8px 10px !important;
-    margin-block-end: 4px !important;
-  }
-  #unified-extensions-panel .unified-extensions-item {
-    margin-block: 2px !important;
-  }
-  #unified-extensions-view .unified-extensions-item-action-button:hover {
-    background-color: color-mix(in srgb, currentColor 3%, transparent) !important;
-  }
-  #unified-extensions-view .unified-extensions-item-menu-button.subviewbutton,
-  .unified-extensions-item-row-wrapper {
-    padding: 0 !important;
-  }
-  #unified-extensions-view .unified-extensions-item-menu-button.subviewbutton > .toolbarbutton-icon {
-    opacity: 0 !important;
-    transition: 0.2s ease !important;
-  }
-  #unified-extensions-panel .unified-extensions-item:hover {
-    .unified-extensions-item-menu-button.subviewbutton > .toolbarbutton-icon {
-      opacity: 0.85 !important;
-    }
-    background-color: transparent !important;
-  }
-  #unified-extensions-view .unified-extensions-item-action-button .panel-no-padding .webextension-browser-action {
-    padding: 0 !important;
-  }
-  #unified-extensions-view .toolbar-menupopup :is(menu, menuitem), .subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {
-    max-height: 3em !important;
-  }
-  #unified-extensions-view .subviewbutton-iconic {
-    & > .toolbarbutton-icon {
-      width: 1em !important;
-      height: 1em !important;
-      padding: 0.6em !important;
-    }
-  }
-}
+:root[zen-sidebar-expanded="true"] {
+  --Neo-Bottom-Height-Expanded: 98px;
+  --Neo-Bottom-Height-Collapsed: 50px;
+  --Neo-Bottom-Height-Aux: 0px;
+  --Neo-Bottom-Margin-Top: 0px;
+  --Neo-Bottom-Margin-Bottom: 0px;
 
-/* 1 - Apply grid view in extension menu */
-@media (-moz-bool-pref: "mod.extension.viewgrid") {
-  /* Set width of Unified Extension View */
-  #unified-extensions-view {
-    width: calc(var(--menu-panel-width) - 118px) !important;
-  }
-
-  /* Hide the header as well as texts and settings icon for each extension, so only icons are visible */
-  #unified-extensions-description,
-  #unified-extensions-view .panel-header,
-  #unified-extensions-view > :nth-child(2),
-  .unified-extensions-item-name,
-  .unified-extensions-item-message,
-  .unified-extensions-item-message-hover,
-  .unified-extensions-item-message-hover-menu-button,
-  .unified-extensions-item-menu-button {
-    display: none !important;
-  }
-
-  /* Arrange extensions in a properly centered 4-column grid */
-  #overflowed-extensions-list, #unified-extensions-area, .unified-extensions-list {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important; /* 4 columns */
-    justify-content: left !important;
-    align-items: center !important;
-    margin-inline: 7px !important;
-    width: 0px !important;
-  }
-
-  #overflowed-extensions-list {
-    padding-block-start: 5px !important;
-  }
-  #unified-extensions-area {
-    padding-block-end: 10px !important;
-  }
-
-  /* Ensure the extensions are fully centered with squircle hover shape, and reduce unneeded margins/paddings  */
-  .unified-extensions-item {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-radius: 12px !important;
-  }
-  .unified-extensions-item-icon, .unified-extensions-item .webextension-browser-action.subviewbutton > .toolbarbutton-badge-stack {
-    margin: 0px !important;
-  }
-  panelview .unified-extensions-item-action-button {
-    padding: 10px 10px !important;
-  }
-  
-  /* Set proper padding for the Manage Extensions button */
-  #unified-extensions-manage-extensions {
-    padding: 8px 16px !important;
-    margin-block-end: 4px !important;
-  }
-  
-  /* Set lighter opacity for passive extension buttons */
-  .unified-extensions-item-icon {
-    opacity: 0.6;
-  }
-  .unified-extensions-item-action-button:hover {
-    background-color: color-mix(in srgb, currentColor 20%, transparent) !important;
-  }
-
-  #unified-extensions-view toolbarseparator {
-    margin-top: 0px !important;
-  }
-}
-/* Invert the passive extension icons in dark mode */
-@media (prefers-color-scheme: dark) {
-  @media (-moz-bool-pref: "mod.extension.viewgrid") {
-    .unified-extensions-item-icon {
-      filter: invert(1) !important;
-    }
-  }
-}
-
-/* 2 - Hide Zoom button in URL bar */
-@media (-moz-bool-pref: "mod.lean.hide-zoom") {
-  #urlbar-zoom-button {
-    display: none !important;
-  }
-}
-
-/* 3 - Show translation button when hovering URL bar in Single Toolbar mode */
-:root[zen-single-toolbar='true'] {
-  @media (-moz-bool-pref: "mod.lean.show-translation") {
-    #urlbar:hover {
-      #translations-button {
-        display: inherit !important; 
-      }
-      #translations-button {
-        &[hidden="true"] {
-          #translations-button-circle-arrows, #translations-button-locale {
-            visibility: collapse !important;
+  #navigator-toolbox {
+    @media not (-moz-pref("mod.zz-neo-features-disabled")) {
+      @media not (-moz-pref("mod.zz-neo-features-bottom-disabled")) {
+        &:not(:has(#zen-workspaces-button> .subviewbutton:only-child)):not(:has(#zen-sidebar-foot-buttons #zen-workspaces-button:only-child)) {
+          @media (-moz-pref("mod.zz-neo-features-bottom-at-bottom")) {
+            --Neo-Bottom-Margin-Top: 5px;
+            --Neo-Bottom-Margin-Bottom: 0px;
           }
-          #translations-button-icon {
-            visibility: visible !important;
+
+          @media not (-moz-pref("mod.zz-neo-features-bottom-at-bottom")) {
+            --Neo-Bottom-Margin-Top: 5px;
+            --Neo-Bottom-Margin-Bottom: 5px;
           }
         }
-      }
-    }
-    #translations-button {
-      transition: all 0.1s ease !important;
-    }
-    & #translation-button:not([open]) {
-      margin-inline-start: calc(-8px - 2 * var(--urlbar-icon-padding));
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    #urlbar:hover #translations-button {
-      opacity: 1 !important;
-      margin-inline-start: 0 !important;
-      transform: none !important;
-      display: flex;
-    }
-  }
-}
 
-/* 4 - Show page action button for extensions when hovering URL bar in Single Toolbar mode */
-:root[zen-single-toolbar='true'] {
-  @media (-moz-bool-pref: "mod.lean.show-pageactions") {
-    #urlbar:hover {
-      .urlbar-addon-page-action {
-        display: inherit !important;
-      }
-    }
-    #page-action-buttons {
-      order: 1 !important;
-    }
-  }
-}
+        &:not(:has(#zen-workspaces-button>.subviewbutton:only-child)):has(#zen-sidebar-foot-buttons #zen-workspaces-button:only-child) {
+          @media not (-moz-pref("mod.zz-neo-features-workspace-button-hidden")) {
+            @media (-moz-pref("mod.zz-neo-features-bottom-at-bottom")) {
+              --Neo-Bottom-Margin-Top: 5px;
+              --Neo-Bottom-Margin-Bottom: 0px;
+            }
 
-/* 5 - Hide top workspace indicator unless when editing space name
- * + adjust Essentials area bottom padding */
-@media -moz-pref("mod.lean.top-workspace") {
-  .zen-current-workspace-indicator:not(:has(.tab-label-container-editing)) {
-    visibility: collapse !important;
-  }
-  @media -moz-pref("mod.lean.pinned-ext") {
-    .zen-essentials-container:not(:empty) {
-      padding-bottom: 4px !important;
-    }
-    @media not -moz-pref("mod.lean.bottom-buttons") {
-      #main-window[zen-single-toolbar="true"] {
-        .zen-essentials-container {
-          padding-bottom: 4px !important;
-          padding-top: 4px !important;
-        }
-      }
-    }
-  }
-  @media not -moz-pref("mod.lean.pinned-ext") {
-    .zen-essentials-container:not(:empty), .zen-current-workspace-indicator {
-      padding-bottom: 0px !important;
-    }
-    #main-window[zen-single-toolbar="true"] {
-      .zen-essentials-container {
-        padding-bottom: 6px !important;
-      }
-    }
-  }
-}
-
-/* 6 - Hide bottom buttons area unless tab sidebar is hovered */
-:root:not([customizing]) {
-  @media -moz-pref("mod.lean.bottom-buttons") {
-    #zen-sidebar-foot-buttons, #zen-workspaces-button, #zen-sidebar-foot-buttons toolbarbutton {
-      transition: ease 0.2s !important;
-    }
-    #titlebar:not(:hover) {
-      zen-workspace {
-        & > arrowscrollbox {
-          &[overflowing] {
-            &::after {
-              height: 0px !important;
+            @media not (-moz-pref("mod.zz-neo-features-bottom-at-bottom")) {
+              --Neo-Bottom-Margin-Top: 5px;
+              --Neo-Bottom-Margin-Bottom: 5px;
             }
           }
         }
-      }
-      #zen-sidebar-foot-buttons {
-        min-height: 3px !important;
-        gap: 1px !important;
-        padding-top: 1px !important;
-        toolbarbutton, #zen-workspaces-button {
-          opacity: 0 !important;
-          height: 0px !important;
-        }
-      }
-    }
-  }
-}
 
-/* 7 - Ninja top buttons on Single Toolbar mode
- * You can hover slightly above URL bar to access the top buttons, but you can't see it */
-:root[zen-single-toolbar="true"] {
-  --top-toolbar-hover-opacity: 0;
-  @media -moz-pref("mod.lean.ninja-top-buttons") {
-    #zen-sidebar-top-buttons, #zen-sidebar-top-buttons-customization-target, #zen-sidebar-top-buttons toolbarbutton {
-      transition: ease 0.2s !important;
-    }
-    #navigator-toolbox {
-      & #zen-appcontent-navbar-wrapper, & #zen-sidebar-top-buttons {
-        --zen-toolbar-height: 1px !important;
-        opacity: var(--top-toolbar-hover-opacity) !important;
-        z-index: 9 !important;
-      }
-    }
-    #navigator-toolbox:not(:hover) {
-      & #zen-appcontent-navbar-wrapper, & #zen-sidebar-top-buttons {
-        opacity: 0 !important;
-      }
-    }
-  }
-}
+        &:has(#zen-workspaces-button>.subviewbutton:only-child):not(:has(#zen-sidebar-foot-buttons #zen-workspaces-button:only-child)) {
+          @media not (-moz-pref("mod.zz-neo-features-workspace-button-hidden")) {
+            @media (-moz-pref("mod.zz-neo-features-bottom-at-bottom")) {
+              --Neo-Bottom-Margin-Top: 5px;
+              --Neo-Bottom-Margin-Bottom: 0px;
+            }
 
-
-/* 8 - Only show bookmarks when hovering top navigation bar on Multiple & Collapsed Toolbar mode
- * Mimicking how it works on Single Toolbar */
-:root:not([zen-single-toolbar="true"]) {
-  @media -moz-pref("mod.lean.bookmarks") {
-    #PersonalToolbar:not([collapsed="true"]) {   
-      min-height: 2px !important;
-      height: 2px !important;
-      opacity: 0;
-      transition: 0.2s ease !important;
-    }
-    &[customizing] {
-      #PersonalToolbar {
-        opacity: 1;
-        height: 30px !important;
-      }
-    }  
-    #zen-appcontent-navbar-container:hover {
-      #PersonalToolbar {
-        opacity: 1;
-        height: 30px !important;
-      }
-    }
-    #TabsToolbar {
-      margin-block-start: 2px !important;
-    }
-  }
-}
-
-/* 9 - WIP: Bottom buttons as "pinned extensions" on Single Toolbar mode
- * Also hide the workspace buttons, and the separator below tabs area */
-
-/* Part A: When bottom buttons is always shown */
-@media -moz-pref("mod.lean.pinned-ext") {
-  #main-window[zen-single-toolbar="true"] {
-    #titlebar {
-      zen-workspace {
-        & > arrowscrollbox {
-          &[overflowing] {
-            &::after {
-              height: 0px !important;
+            @media not (-moz-pref("mod.zz-neo-features-bottom-at-bottom")) {
+              --Neo-Bottom-Margin-Top: 5px;
+              --Neo-Bottom-Margin-Bottom: 5px;
             }
           }
         }
       }
     }
-    #navigator-toolbox[zen-sidebar-expanded="true"] {
-      @media -moz-pref("mod.lean.bottom-buttons") {
-        .zen-essentials-container {
-          :root[zen-single-toolbar="true"] &:not(:empty) {
-            padding-top: 0px !important;
+  }
+
+  #navigator-toolbox {
+    @media not (-moz-pref("mod.zz-neo-features-disabled")) {
+      @media not (-moz-pref("mod.zz-neo-features-bottom-disabled")) {
+        &:not(:has(#zen-workspaces-button>.subviewbutton:only-child)):not(:has(#zen-sidebar-foot-buttons #zen-workspaces-button:only-child)) {
+          @media not (-moz-pref("mod.zz-neo-features-workspace-button-hidden")) {
+            --Neo-Bottom-Height-Aux: var(--Neo-Bottom-Height-Collapsed);
+          }
+
+          @media (-moz-bool-pref: "mod.zz-neo-features-workspace-button-hidden") or (-moz-bool-pref: "mod.zz-neo-features-bottom-keep-expanded") {
+            --Neo-Bottom-Height-Aux: var(--Neo-Bottom-Height-Expanded);
           }
         }
-      }
-      & #zen-sidebar-foot-buttons {
-        order: -1 !important;
-        justify-content: center !important;
-        padding-inline: calc(var(--zen-toolbox-padding) - 3px) !important;
-        gap: 4px !important;
-        padding-top: 4px !important;
-        padding-bottom: 0px !important;
-      }
-      #zen-sidebar-foot-buttons toolbarbutton {
-        .toolbarbutton-1 {
-          padding-inline: 0 !important;
-          margin: 0 !important;
-          margin-top: 0 !important;
-        }
-        padding-inline: 0px !important;
-        min-width: 40px !important;
-        &.toolbarbutton-1 {
-          &:not([disabled]) {
-            &:hover > :is(.toolbarbutton-icon, .toolbarbutton-text, .toolbarbutton-badge-stack) {
-              background-color: transparent !important;
-            }
+
+        &:not(:has(#zen-workspaces-button>.subviewbutton:only-child)):has(#zen-sidebar-foot-buttons #zen-workspaces-button:only-child) {
+          @media not (-moz-pref("mod.zz-neo-features-workspace-button-hidden")) {
+            --Neo-Bottom-Height-Aux: var(--Neo-Bottom-Height-Collapsed);
           }
         }
-      }
-      #zen-sidebar-foot-buttons toolbarbutton {
-        background-color: var(--zen-toolbar-element-bg) !important;
-        border-radius: var(--tab-border-radius) !important;
-      }
-      #zen-sidebar-foot-buttons toolbarbutton:hover {
-        background-color: var(--toolbarbutton-hover-background) !important;
-      }
-      @media not -moz-pref("mod.lean.pinned-ext.workspaces") {  
-        #zen-workspaces-button {
-          display: none !important; 
-          height: 0 !important;
-          min-height: 0 !important;
-        }
-      }
-      @media -moz-pref("mod.lean.pinned-ext.workspaces") {  
-        #zen-sidebar-foot-buttons {
-          gap: 0px !important;
+
+        &:has(#zen-workspaces-button>.subviewbutton:only-child):not(:has(#zen-sidebar-foot-buttons #zen-workspaces-button:only-child)) {
+          --Neo-Bottom-Height-Aux: var(--Neo-Bottom-Height-Collapsed);
         }
       }
     }
-  }
-}
 
-@media not -moz-pref("mod.lean.bottom-buttons") {
-  @media -moz-pref("mod.lean.pinned-ext") {
-    #main-window[zen-single-toolbar="true"] {
-      #navigator-toolbox[zen-sidebar-expanded="true"] {
-        & #zen-sidebar-foot-buttons {
-          min-height: 30px !important;
-        }
-        #zen-sidebar-foot-buttons toolbarbutton {
-          margin-block: 1px 0px !important;
-          height: 30px !important;
-        }
-        & #zen-sidebar-foot-buttons {
-          padding-top: 4px !important;
+    @media (-moz-bool-pref: "mod.zz-neo-features-bottom-disabled") {
+      --Neo-Bottom-Height-Aux: 18.5px;
+
+      &:not(:has(#zen-workspaces-button>.subviewbutton:only-child)):not(:has(#zen-sidebar-foot-buttons #zen-workspaces-button:only-child)) {
+        --Neo-Bottom-Height-Aux: 33px;
+      }
+
+      @media not (-moz-pref("mod.zz-neo-features-workspace-button-hidden")) {
+        &:not(:has(#zen-workspaces-button>.subviewbutton:only-child)):has(#zen-sidebar-foot-buttons #zen-workspaces-button:only-child) {
+          --Neo-Bottom-Height-Aux: 33px;
         }
       }
-    }
-  }
-}
 
-/* Part B: When bottom buttons are only shown in hover */
-@media -moz-pref("mod.lean.bottom-buttons") {
-  @media -moz-pref("mod.lean.pinned-ext") {
-    #main-window[zen-single-toolbar="true"] {
-      #navigator-toolbox[zen-sidebar-expanded="true"]:hover {
-        & #zen-sidebar-foot-buttons {
-          min-height: 30px !important;
-          padding-bottom: 4px !important;
-        }
-        #zen-sidebar-foot-buttons toolbarbutton {
-          margin-block: 1px 0px !important;
-          min-width: 40px !important;
-          height: 30px !important;
-        }
-      }
-      #navigator-toolbox[zen-sidebar-expanded="true"] {
-        & #zen-sidebar-foot-buttons {
-          min-height: 0px !important;
-        }
-        #zen-sidebar-foot-buttons toolbarbutton {
-          margin-block: 1px 0px !important;
-          height: 0px !important;
-        }
+      &:has(#zen-workspaces-button>.subviewbutton:only-child):not(:has(#zen-sidebar-foot-buttons #zen-workspaces-button:only-child)) {
+        --Neo-Bottom-Height-Aux: 33px;
       }
     }
   }
 }
 
 /* Neo Essentials */
-@media not (-moz-pref("neo-features-disabled")) {
-    @media not (-moz-pref("neo-features-essentials-disabled")) {
-        #navigator-toolbox:not([zen-sidebar-expanded="true"]) {
-            & #zen-essentials {
-                margin-bottom: 10px !important;
-            }
+@media not (-moz-pref("mod.zz-neo-features-disabled")) {
+  @media not (-moz-pref("mod.zz-neo-features-essentials-disabled")) {
+    #navigator-toolbox:not([zen-sidebar-expanded="true"]) {
+      & #zen-essentials {
+        margin-bottom: 10px !important;
+      }
 
-            & .zen-essentials-container {
-                display: grid !important;
+      & .zen-essentials-container {
+        display: grid !important;
 
-                overflow-y: auto !important;
-                overflow-x: unset !important;
-                scrollbar-width: none !important;
-                scroll-behavior: smooth !important;
+        overflow-y: auto !important;
+        overflow-x: unset !important;
+        scrollbar-width: none !important;
+        scroll-behavior: smooth !important;
 
-                align-self: center !important;
-                justify-self: center !important;
+        align-self: center !important;
+        justify-self: center !important;
 
-                @media not (-moz-pref("neo-features-essentials-keep-expanded")) {
-                    max-height: 45px !important;
-                }
-
-                @media (-moz-pref("neo-features-essentials-keep-expanded")) {
-                    height: fit-content !important;
-                    max-height: calc((var(--tab-min-height) + 7px) * 4) !important;
-                }
-
-                @media not (-moz-pref("neo-features-essentials-keep-expanded")) {
-                    & .tabbrowser-tab:not([selected]) {
-                        opacity: 0 !important;
-                        visibility: hidden !important;
-                        transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out !important;
-                    }
-                }
-
-                /* Reorder selected tab to stay visible */
-                & .tabbrowser-tab[selected] {
-                    /* Moves selected tab to the first position */
-                    order: -1 !important;
-                    /* Sticks selected tab to the top */
-                    position: sticky !important;
-                    top: 0 !important;
-                    /* Mover selected tab over other tabs */
-                    z-index: 9999 !important;
-
-                }
-
-                transition: height 0.4s cubic-bezier(0.175, 1.385, 0.62, 1),
-                min-height 0.5s cubic-bezier(0.175, 1.385, 0.62, 1),
-                max-height 0.5s cubic-bezier(0.175, 1.385, 0.62, 1),
-                top 0.5s cubic-bezier(0.175, 1.385, 0.62, 1),
-                margin 0.5s cubic-bezier(0.175, 1.385, 0.62, 1) !important;
-
-            }
-
-            @media not (-moz-pref("neo-features-essentials-keep-expanded")) {
-
-                /* Expands on hover */
-                & .zen-essentials-container:hover {
-                    max-height: calc((var(--tab-min-height) + 7px) * 5) !important;
-
-                    & .tabbrowser-tab {
-                        opacity: 1 !important;
-                        visibility: visible !important;
-                    }
-                }
-            }
+        @media not (-moz-pref("mod.zz-neo-features-essentials-keep-expanded")) {
+          max-height: 45px !important;
         }
 
-
-        @media not (-moz-pref("neo-features-essentials-keep-expanded")) {
-            :root:not([zen-sidebar-expanded="true"]) {
-
-                /* Essentials pseudo element when no essential tab selected */
-                .zen-essentials-container::before {
-                    content: "Neo\A Zen" !important;
-                    white-space: pre-wrap !important;
-                    text-align: center !important;
-                    text-justify: center !important;
-                    align-content: center !important;
-                    font-size: 14px !important;
-                    color: color-mix(in srgb, var(--zen-primary-color) 100%, white) !important;
-                    position: sticky !important;
-                    top: 0% !important;
-                    left: 0% !important;
-                    height: 42px !important;
-                    filter: drop-shadow(0px 0px 3px var(--zen-primary-color)) brightness(1.05) !important;
-
-                }
-
-                .zen-essentials-container[hidden="true"]::before {
-                    opacity: 1.0 !important;
-                }
-
-                .zen-essentials-container:not([hidden="true"]) {
-                    &:not(:has(.tabbrowser-tab[selected])):not(:hover)::before {
-                        opacity: 1.0 !important;
-                        visibility: visible !important;
-                        display: block !important;
-                    }
-
-                    &:has(.tabbrowser-tab[selected])::before {
-                        opacity: 0 !important;
-                        visibility: hidden !important;
-                        display: none !important;
-                    }
-
-                    &::before {
-                        opacity: 0.0;
-                        transition: opacity 0.4s ease !important;
-                    }
-                }
-            }
+        @media (-moz-pref("mod.zz-neo-features-essentials-keep-expanded")) {
+          height: fit-content !important;
+          max-height: calc((var(--tab-min-height) + 7px) * 4) !important;
         }
+
+        @media not (-moz-pref("mod.zz-neo-features-essentials-keep-expanded")) {
+          & .tabbrowser-tab:not([selected]) {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out !important;
+          }
+        }
+
+        /* Reorder selected tab to stay visible */
+        & .tabbrowser-tab[selected] {
+          /* Moves selected tab to the first position */
+          order: -1 !important;
+          /* Sticks selected tab to the top */
+          position: sticky !important;
+          top: 0 !important;
+          /* Mover selected tab over other tabs */
+          z-index: 9999 !important;
+
+        }
+
+        transition: height 0.4s cubic-bezier(0.175, 1.385, 0.62, 1),
+        min-height 0.5s cubic-bezier(0.175, 1.385, 0.62, 1),
+        max-height 0.5s cubic-bezier(0.175, 1.385, 0.62, 1),
+        top 0.5s cubic-bezier(0.175, 1.385, 0.62, 1),
+        margin 0.5s cubic-bezier(0.175, 1.385, 0.62, 1) !important;
+
+      }
+
+      @media not (-moz-pref("mod.zz-neo-features-essentials-keep-expanded")) {
+
+        /* Expands on hover */
+        & .zen-essentials-container:hover {
+          max-height: calc((var(--tab-min-height) + 7px) * 5) !important;
+
+          & .tabbrowser-tab {
+            opacity: 1 !important;
+            visibility: visible !important;
+          }
+        }
+      }
     }
+
+
+    @media not (-moz-pref("mod.zz-neo-features-essentials-keep-expanded")) {
+      :root:not([zen-sidebar-expanded="true"]) {
+
+        /* Essentials pseudo element when no essential tab selected */
+        .zen-essentials-container::before {
+          content: "Neo\A Zen" !important;
+          white-space: pre-wrap !important;
+          text-align: center !important;
+          text-justify: center !important;
+          align-content: center !important;
+          font-size: 14px !important;
+          color: color-mix(in srgb, var(--zen-primary-color) 100%, white) !important;
+          position: sticky !important;
+          top: 0% !important;
+          left: 0% !important;
+          height: 42px !important;
+          filter: drop-shadow(0px 0px 3px var(--zen-primary-color)) brightness(1.05) !important;
+
+        }
+
+        .zen-essentials-container[hidden="true"]::before {
+          opacity: 1.0 !important;
+        }
+
+        .zen-essentials-container:not([hidden="true"]) {
+          &:not(:has(.tabbrowser-tab[selected])):not(:hover)::before {
+            opacity: 1.0 !important;
+            visibility: visible !important;
+            display: block !important;
+          }
+
+          &:has(.tabbrowser-tab[selected])::before {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            display: none !important;
+          }
+
+          &::before {
+            opacity: 0.0;
+            transition: opacity 0.4s ease !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media not (-moz-pref("mod.zz-neo-features-disabled")) {
+  @media not (-moz-pref("mod.zz-neo-features-media-disabled")) {
+    #zen-media-controls-toolbar {
+      align-self: center !important;
+      background: none !important;
+      position: relative !important;
+      margin: 0px 0px !important;
+    }
+
+    #zen-media-controls-toolbar>toolbaritem {
+      background: var(--Neo-Blur-Color) !important;
+      backdrop-filter: var(--Neo-Blur-Simple) !important;
+      border-radius: var(--Neo-Border-Radius) !important;
+    }
+  }
+}
+
+/* Pseudo background for media player */
+@media not (-moz-pref("mod.zz-neo-features-disabled")) {
+  @media not (-moz-pref("mod.zz-neo-features-media-disabled")) {
+    #TabsToolbar::before {
+      align-self: center !important;
+      justify-self: center !important;
+      position: absolute !important;
+      z-index: -1 !important;
+      content: "" !important;
+      background: var(--Neo-Background-Color);
+
+      width: calc(100%);
+      opacity: 0;
+
+      height: 34px;
+      top: auto;
+      left: auto;
+      right: auto !important;
+      bottom: var(--zen-toolbox-padding);
+
+      border-radius: var(--Neo-Border-Radius) !important;
+      visibility: visible !important;
+      transition: bottom 0.3s ease 100ms, height 0.2s ease, opacity 0.3s ease;
+    }
+
+    :root:not([zen-compact-mode="true"]) {
+      #navigator-toolbox:has(#zen-media-controls-toolbar:hover) {
+        #TabsToolbar::before {
+          opacity: 1 !important;
+        }
+      }
+    }
+
+    :root:not([zen-single-toolbar="true"])[zen-compact-mode="true"] {
+      #navigator-toolbox:has(#zen-media-controls-toolbar:hover) {
+        @media not (-moz-pref("zen.view.compact.hide-tabbar")) {
+          #TabsToolbar::before {
+            opacity: 1 !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+:root[zen-sidebar-expanded="true"] {
+  #navigator-toolbox:has(#zen-media-controls-toolbar:hover) {
+    #TabsToolbar::before {
+      height: 108px !important;
+    }
+  }
+
+  #navigator-toolbox:has(#zen-media-controls-toolbar[media-position-hidden="true"]:hover):has(#zen-media-artist:empty) {
+    #TabsToolbar::before {
+      height: 68px !important;
+    }
+  }
+
+  #navigator-toolbox:has(#zen-media-controls-toolbar[media-position-hidden="true"]:hover),
+  #navigator-toolbox:has(#zen-media-controls-toolbar:hover):has(#zen-media-artist:empty) {
+    #TabsToolbar::before {
+      height: 92px !important;
+    }
+  }
+}
+
+:root:not([zen-sidebar-expanded="true"]) {
+  #TabsToolbar::before {
+    bottom: 0px !important;
+    width: calc(44px);
+    height: 0px;
+    transition: height 1s ease, opacity 0.5s ease !important;
+  }
+
+  #navigator-toolbox:has(#zen-media-controls-toolbar:hover) {
+    #TabsToolbar::before {
+      height: 210px;
+    }
+  }
+}
+
+/* Bottom alignment */
+@media (-moz-bool-pref: "mod.zz-neo-features-bottom-at-bottom") {
+  :root[zen-sidebar-expanded="true"] {
+
+    #navigator-toolbox {
+      & #TabsToolbar::before {
+        bottom: calc(var(--zen-toolbox-padding) + var(--Neo-Bottom-Height-Aux) + var(--Neo-Bottom-Margin-Top)) !important;
+      }
+    }
+
+  }
+}
+
+@media not (-moz-pref("mod.zz-neo-features-disabled")) {
+  @media not (-moz-pref("mod.zz-neo-features-media-disabled")) {
+    :root:not([zen-sidebar-expanded="true"]) {
+
+      #zen-media-controls-toolbar:not([hidden]),
+      #zen-media-controls-toolbar:not([hidden])>toolbaritem {
+        display: flex !important;
+      }
+
+      #zen-media-controls-toolbar {
+        justify-content: center !important;
+        align-content: center !important;
+        padding-bottom: 5px !important;
+        order: 9999 !important;
+        z-index: 99999 !important;
+
+        &[media-sharing=""] {
+          & #media-device-buttons {
+            display: flex !important;
+            flex-direction: column !important;
+            position: relative !important;
+            /* Centering media sharing buttons */
+            justify-items: center !important;
+            align-items: stretch !important;
+            height: fit-content !important;
+          }
+        }
+      }
+
+      #zen-media-controls-toolbar>toolbaritem {
+        flex-direction: column !important;
+        position: absolute !important;
+        justify-items: center !important;
+        align-items: stretch !important;
+        justify-content: center !important;
+        align-content: center !important;
+
+        width: fit-content !important;
+
+        left: auto !important;
+
+        min-height: unset !important;
+        height: 30px !important;
+
+        background: transparent !important;
+        box-shadow: 0px 0px 0px var(--Neo-Shadow-Color-1) !important;
+        backdrop-filter: blur(0px) !important;
+
+        padding: 5px 7px !important;
+
+        transition: height 1s ease, background 1s ease, backdrop-filter 0.3s ease, box-shadow 0.2s ease !important;
+
+        /* Hide media progress bar */
+        & #zen-media-progress-hbox {
+          display: none !important;
+        }
+
+        /* Hide media info */
+        & #zen-media-info-vbox {
+          display: none !important;
+        }
+
+        & #zen-media-controls-hbox {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-items: center !important;
+          align-items: stretch !important;
+          order: -1 !important;
+        }
+
+        & #zen-media-buttons-hbox {
+          display: flex !important;
+          flex-direction: column !important;
+          position: relative !important;
+
+          justify-items: center !important;
+          align-items: stretch !important;
+          justify-self: center !important;
+          align-self: center !important;
+
+          margin: 0px 0px !important;
+          padding: 0px 0px !important;
+          transform: none !important;
+        }
+
+        & #zen-media-focus-button {
+          display: flex !important;
+        }
+
+        & #zen-media-playback-buttons {
+          display: flex !important;
+          flex-direction: column !important;
+          position: relative !important;
+
+          margin: 0px 0px !important;
+          padding: 0px 0px !important;
+          transform: none !important;
+        }
+
+        & .show-on-hover {
+          display: flex !important;
+          position: relative !important;
+          padding: 0px 0px !important;
+          transform: none !important;
+          top: unset !important;
+          bottom: unset !important;
+
+          min-height: fit-content !important;
+          max-height: unset !important;
+          margin: 0px 0px !important;
+
+          opacity: 1 !important;
+        }
+      }
+
+      #zen-media-controls-toolbar:not([hidden]):hover {
+        &>toolbaritem {
+          height: 210px !important;
+          background: var(--Neo-Blur-Color) !important;
+          backdrop-filter: var(--Neo-Blur-Simple) !important;
+          box-shadow: 0px 0px 5px var(--Neo-Shadow-Color-1) !important;
+        }
+      }
+    }
+  }
+}
+
+@media not (-moz-pref("mod.zz-neo-features-disabled")) {
+  @media not (-moz-pref("mod.zz-neo-features-media-disabled")) {
+    :root[zen-sidebar-expanded="true"] {
+      #zen-media-controls-toolbar {
+        margin: 5px 0px !important;
+        height: 40px !important;
+        width: 100% !important;
+        padding: 0px 0px !important;
+      }
+
+      #zen-media-controls-toolbar>toolbaritem {
+        width: 100% !important;
+
+        & #zen-media-buttons-hbox {
+          z-index: 9999 !important;
+        }
+      }
+    }
+  }
 }
