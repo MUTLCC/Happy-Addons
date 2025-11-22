@@ -1,0 +1,21 @@
+{
+  "id": "Happy-Addons",
+  "homepage": "https://github.com/MUTLCC/Zen-Mods",
+  "author": "Happy",
+  "name": "Happy Addons",
+  "description": "Bir sürü farklı eklentiler...",
+  "version": "1.2",
+  "createdAt": "2025-10-04",
+  "updatedAt": "2025-11-22",
+  "style": {
+    "chrome": "https://raw.githubusercontent.com/Mutlcc/Zen-Mods/main/chrome.css"
+  },
+  "preferences": "https://raw.githubusercontent.com/Mutlcc/Zen-Mods/main/preferences.json",
+  "readme": "https://raw.githubusercontent.com/Mutlcc/Zen-Mods/main/README.md",
+  "tags": [
+    "chrome",
+    "addons",
+    "extensions"
+  ],
+  "fork": ["zen"]
+}
